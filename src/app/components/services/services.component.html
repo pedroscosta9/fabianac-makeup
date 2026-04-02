@@ -1,0 +1,22 @@
+<section class="services-section" id="servicos">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">O que ofereço</div>
+      <h2 class="section-title">Serviços <em>personalizados</em></h2>
+    </div>
+    <a href="#marcacao" class="section-link">Fazer Marcação →</a>
+  </div>
+
+  <div class="services-grid">
+    @for (service of services; track service.name; let i = $index) {
+      <div class="service-card reveal" [attr.data-delay]="i * 0.1">
+        <span class="service-icon">{{ service.icon }}</span>
+        <div class="service-name">{{ service.name }}</div>
+        <p class="service-desc">{{ service.desc }}</p>
+        <div class="service-price">
+          {{ service.price }} <span>{{ service.unit }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>

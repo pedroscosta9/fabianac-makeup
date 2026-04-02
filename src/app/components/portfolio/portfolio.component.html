@@ -1,0 +1,23 @@
+<section class="portfolio-section" id="portfolio">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">O meu trabalho</div>
+      <h2 class="section-title">Portfólio <em>selecionado</em></h2>
+    </div>
+    <a href="#" class="section-link">Ver galeria completa →</a>
+  </div>
+
+  <div class="portfolio-grid">
+    @for (item of items; track item.label; let i = $index) {
+      <div class="port-item {{ item.span }} reveal" [attr.data-delay]="(i % 3) * 0.12">
+        <div class="port-img-wrap">
+          <img [src]="item.img" [alt]="item.label + ' - fabianac.makeup'" loading="lazy" />
+        </div>
+        <div class="port-overlay">
+          <div class="port-label">{{ item.label }}</div>
+          <div class="port-tag">{{ item.tag }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

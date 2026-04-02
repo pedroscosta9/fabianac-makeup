@@ -1,0 +1,26 @@
+<section class="testimonials-section" id="depoimentos">
+  <div class="big-quote" aria-hidden="true">"</div>
+
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">Feedback</div>
+      <h2 class="section-title">O que dizem <em>as clientes</em></h2>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    @for (t of testimonials; track t.name; let i = $index) {
+      <div class="testimonial-card reveal" [attr.data-delay]="i * 0.15">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"{{ t.text }}"</p>
+        <div class="author">
+          <img class="author-avatar" [src]="t.avatar" [alt]="t.name" loading="lazy" />
+          <div>
+            <div class="author-name">{{ t.name }}</div>
+            <div class="author-event">{{ t.event }}</div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
