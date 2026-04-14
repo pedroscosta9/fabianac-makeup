@@ -19,9 +19,15 @@ export class NavComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
   }
 
   closeMenu() {
     this.isMenuOpen = false;
+    document.body.style.overflow = '';
   }
+
+  ngOnDestroy() {
+  document.body.style.overflow = '';
+}
 }
