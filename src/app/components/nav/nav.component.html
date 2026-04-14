@@ -1,12 +1,15 @@
 <nav [class.scrolled]="isScrolled">
   <div class="nav-logo">fabianac<span>.makeup</span></div>
-  <ul class="nav-links">
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#portfolio">Portfólio</a></li>
-    <li><a href="#depoimentos">Feedback</a></li>
-    <li><a href="#marcacao" class="nav-cta">Marcar</a></li>
+
+  <ul class="nav-links" [class.open]="isMenuOpen">
+    <li><a href="#servicos" (click)="closeMenu()">Serviços</a></li>
+    <li><a href="#portfolio" (click)="closeMenu()">Portfólio</a></li>
+    <li><a href="#depoimentos" (click)="closeMenu()">Feedback</a></li>
+    <li><a href="#marcacao" class="nav-cta" (click)="closeMenu()">Marcar</a></li>
   </ul>
-  <button class="nav-hamburger" aria-label="Menu">
-    <span></span><span></span>
+
+  <button class="nav-hamburger" (click)="toggleMenu()" aria-label="Menu">
+    <span [class.open]="isMenuOpen"></span>
+    <span [class.open]="isMenuOpen"></span>
   </button>
 </nav>
